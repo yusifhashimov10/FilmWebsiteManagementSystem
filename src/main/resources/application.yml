@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: spring project
+  profiles:
+    include:
+      - db
+      - common
+
+springdoc:
+  api-docs:
+    path: "/api-docs"
+  swagger-ui:
+    operations-sorter: method
