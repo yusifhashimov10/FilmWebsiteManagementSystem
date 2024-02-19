@@ -62,7 +62,7 @@ public class FilmServiceImpl implements FilmService {
     public List<FilmResponse> findByName(String name) {
         List<FilmResponse> responseList = null;
         try {
-            List<Film> filmList = filmRepository.findByName(name);
+            List<Film> filmList = filmRepository.findByNameAndActiveTrue(name);
             responseList = filmList.stream()
                     .map(filmMapper::mapToFilmResponseFromFilm)
                     .collect(Collectors.toList());

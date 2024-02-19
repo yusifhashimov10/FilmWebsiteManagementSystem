@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface GenreRepository extends JpaRepository<Genre, Long> {
-    List<Genre> findByName(String name);
+    List<Genre> findByNameAndActiveTrue(String name);
 
     @Modifying
     @Query("update Genre set active = false where id=:id")

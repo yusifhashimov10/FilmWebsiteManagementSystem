@@ -63,7 +63,7 @@ public class GenreServiceImpl implements GenreService {
     public List<GenreResponse> findByName(String name) {
         List<GenreResponse> responseList = null;
         try {
-             List<Genre> genreList = genreRepository.findByName(name);
+             List<Genre> genreList = genreRepository.findByNameAndActiveTrue(name);
             responseList = genreList.stream()
                     .map(genreMapper::mapToGenreResponseFromGenre)
                     .collect(Collectors.toList());
